@@ -6,9 +6,9 @@ image_resource:
   source: {repository: golang, tag: 1.6-alpine}
 
 inputs:
-- name: resource-tutorial
+- name: resource-tutorial1
 - name: resource-app
   path: gopath/src/github.com/berinle/simple-go-web-app
 
 run:
-path: resource-tutorial/10_job_inputs/task_run_tests-02.sh
+path: resource-tutorial1/10_job_inputs/task_run_tests-02.sh
