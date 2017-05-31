@@ -1,9 +1,9 @@
 ---
 resources:
-- name: resource-tutorial1
+- name: resource-tutorial
   type: git
   source:
-    uri: https://github.com/starkandwayne/concourse-tutorial.git
+    uri: https://github.com/berinle/concourse-tutorial.git
 - name: resource-app
   type: git
   source:
@@ -24,11 +24,11 @@ jobs:
   public: true
   serial: true
   plan:
-  - get: resource-tutorial1
+  - get: resource-tutorial
   - get: resource-app
     trigger: true
   - task: web-app-tests
-    file: resource-tutorial1/10_job_inputs/task_run_tests-02.yml
+    file: resource-tutorial/10_job_inputs/task_run_tests-02.yml
   - put: resource-deploy-web-app
     params:
       manifest: resource-app/manifest.yml
