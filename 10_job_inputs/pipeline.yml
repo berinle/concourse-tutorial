@@ -3,11 +3,11 @@ resources:
 - name: resource-tutorial
   type: git
   source:
-    uri: https://github.com/starkandwayne/concourse-tutorial.git
+    uri: https://github.com/berinle/concourse-tutorial.git
 - name: resource-app
   type: git
   source:
-    uri: https://github.com/cloudfoundry-community/simple-go-web-app.git
+    uri: https://github.com/berinle/simple-go-web-app.git
 
 jobs:
 - name: job-test-app

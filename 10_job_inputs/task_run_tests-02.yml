@@ -11,4 +11,4 @@ inputs:
   path: gopath/src/github.com/berinle/simple-go-web-app
 
 run:
-path: resource-tutorial/10_job_inputs/task_run_tests-2.sh
+path: resource-tutorial/10_job_inputs/task_run_tests-02.sh

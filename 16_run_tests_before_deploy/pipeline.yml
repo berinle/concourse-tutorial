@@ -7,7 +7,7 @@ resources:
 - name: resource-app
   type: git
   source:
-    uri: https://github.com/cloudfoundry-community/simple-go-web-app.git
+    uri: https://github.com/berinle/simple-go-web-app.git
 
 - name: resource-deploy-web-app
   type: cf
@@ -28,7 +28,7 @@ jobs:
   - get: resource-app
     trigger: true
   - task: web-app-tests
-    file: resource-tutorial/10_job_inputs/task_run_tests.yml
+    file: resource-tutorial/10_job_inputs/task_run_tests-02.yml
   - put: resource-deploy-web-app
     params:
       manifest: resource-app/manifest.yml
