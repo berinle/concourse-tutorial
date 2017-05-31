@@ -1,6 +1,6 @@
 ---
 resources:
-- name: resource-tutorial
+- name: resource-tutorial1
   type: git
   source:
     uri: https://github.com/starkandwayne/concourse-tutorial.git
@@ -15,7 +15,7 @@ resources:
     api: {{cf-api}}
     username: {{cf-username}}
     password: {{cf-password}}
-    organization: {{cf-organization}}
+    organization: {{cf-org}}
     space: {{cf-space}}
     skip_cert_check: true
 
@@ -24,11 +24,11 @@ jobs:
   public: true
   serial: true
   plan:
-  - get: resource-tutorial
+  - get: resource-tutorial1
   - get: resource-app
     trigger: true
   - task: web-app-tests
-    file: resource-tutorial/10_job_inputs/task_run_tests-02.yml
+    file: resource-tutorial1/10_job_inputs/task_run_tests-02.yml
   - put: resource-deploy-web-app
     params:
       manifest: resource-app/manifest.yml
